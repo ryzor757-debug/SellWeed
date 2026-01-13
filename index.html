@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Project BlueHarvest | The Truth Protocol</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --liquid-bg: #F8FAFC;
+        --accent: #52B788;
+        --deep-slate: #1E293B;
+        --frosted-blue: #E0F2FE;
+        /* Specific Glass Specs */
+        --glass-bg: rgba(255, 255, 255, 0.4);
+        --glass-border: rgba(255, 255, 255, 0.1);
+        --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        --space-phi: 1.618rem;
+      }
+
+      body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        background-color: var(--liquid-bg);
+        color: var(--deep-slate);
+        margin: 0;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.618;
+        overscroll-behavior-y: none;
+      }
+
+      /* Depth Blobs */
+      body::before {
+        content: "";
+        position: fixed;
+        top: -10%;
+        left: -10%;
+        width: 40%;
+        height: 40%;
+        background: var(--frosted-blue);
+        filter: blur(120px);
+        border-radius: 50%;
+        z-index: -1;
+        opacity: 0.6;
+        pointer-events: none;
+      }
+
+      body::after {
+        content: "";
+        position: fixed;
+        bottom: -10%;
+        right: -10%;
+        width: 30%;
+        height: 30%;
+        background: var(--frosted-blue);
+        filter: blur(100px);
+        border-radius: 50%;
+        z-index: -1;
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      .gpu-accelerated {
+        transform: translate3d(0,0,0);
+        will-change: transform, opacity;
+        backface-visibility: hidden;
+      }
+
+      /* Premium Glass Utilities */
+      .glass {
+        background: var(--glass-bg);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--glass-shadow);
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15); /* Slightly lighter base for stackability */
+        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .glass-card:hover {
+        background: rgba(255, 255, 255, 0.6);
+        border-color: var(--accent);
+        box-shadow: 0 8px 32px 0 rgba(82, 183, 136, 0.4);
+        transform: translateY(-8px) scale(1.01);
+      }
+
+      /* High-end typography */
+      .fluid-h1 { font-size: clamp(2.5rem, 8vw + 1rem, 10rem); }
+      .fluid-h2 { font-size: clamp(2rem, 5vw + 1rem, 6rem); }
+      .fluid-p { font-size: clamp(0.9rem, 1vw + 0.5rem, 1.25rem); }
+
+      h1, h2, h3, h4 {
+        letter-spacing: -0.04em;
+        text-wrap: balance;
+        color: var(--deep-slate);
+      }
+      
+      .text-gradient {
+        background: linear-gradient(180deg, var(--deep-slate) 0%, var(--accent) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @keyframes scan {
+        0% { transform: translateY(-100%); opacity: 0; }
+        50% { opacity: 0.1; }
+        100% { transform: translateY(300%); opacity: 0; }
+      }
+      .scan-line {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        z-index: 30;
+        pointer-events: none;
+        animation: scan 10s linear infinite;
+        will-change: transform;
+      }
+
+      .btn-ripple {
+        transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .btn-ripple:active { transform: scale(0.97) translate3d(0,0,0); }
+
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-thumb { background: rgba(30, 41, 59, 0.1); border-radius: 10px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
