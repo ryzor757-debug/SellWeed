@@ -1,20 +1,22 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Project BlueHarvest: The Truth Protocol
 
-# Run and deploy your AI Studio app
+### Bangladesh’s first tri-nodal gig-platform turning seaweed into verified global assets.
 
-This contains everything you need to run your app locally.
+## Tech Stack
+- **Framework**: React 19 (Native ESM)
+- **Styling**: Tailwind CSS (Post-Modern Minimalist / Glassmorphism)
+- **Icons**: Lucide React
+- **Identity**: NID-Linked Blockchain Verification
+- **Deployment**: Vercel (Edge Optimized)
 
-View your app in AI Studio: https://ai.studio/apps/drive/16gaoJJ8tJvUFhYnKlnaNwNozGeaB4arW
+## Vision 2041
+Project BlueHarvest is strategically aligned with the "Smart Bangladesh 2041" vision, focusing on rural empowerment and sustainable marine resource management. We bridge the gap between rural coastal labor and global digital markets using decentralized blockchain transparency.
 
-## Run Locally
+## Design Philosophy
+**Clean Rural Modernism**:
+- **Visuals**: Bento-Grid layout combined with Glassmorphism.
+- **Theme**: Frosted Sea-Foam (#F8FAFC) background with Deep Slate (#1E293B) typography.
+- **Accent**: Seaweed Green (#52B788).
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+---
+© 2025 PROJECT BLUEHARVEST. DIGITAL SOVEREIGNTY FOR THE BENGAL BASIN.

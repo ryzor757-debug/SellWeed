@@ -1,22 +1,17 @@
 {
   "name": "project-blueharvest",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+  "description": "Bangladesh’s first tri-nodal gig-platform for verified seaweed assets.",
+  "engines": {
+    "node": ">=18.0.0"
   },
-  "dependencies": {
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "lucide-react": "^0.562.0"
-  },
-  "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@vitejs/plugin-react": "^5.0.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.0"
-  }
+  "keywords": [
+    "blue-economy",
+    "blockchain",
+    "seaweed",
+    "bangladesh",
+    "glassmorphism"
+  ]
 }
